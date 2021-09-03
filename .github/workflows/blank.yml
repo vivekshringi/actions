@@ -36,7 +36,7 @@ jobs:
           echo test, and deploy your project.
       - name: running one more script 
         run: |
-            curl -u username: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 \
+            curl -u username:${{ secrets.GITHUB_TOKEN }} \
             -X POST -H "Accept: application/vnd.github.v3+json" \
             https://api.github.com/repos/vivekshringi/hello-github-actions/dispatches \
             -d '{"event_type":"opened","client_payload":{"name":"Vivek"}}'
