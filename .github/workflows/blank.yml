@@ -38,7 +38,7 @@ jobs:
         run: |
           curl --request POST \
           --url https://api.github.com/repos/vivekshringi/hello-github-actions/dispatches \
-          --user 'username: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' \
+          --user username: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 \
           --header  'Accept: application/vnd.github.v3+json' \
           --data '{
             "event_type": "opened",
