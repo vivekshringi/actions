@@ -34,3 +34,14 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      - name: running one more script 
+        run: |
+          curl --request POST \
+          --url https://api.github.com/repos/vivekshringi/hello-github-actions/dispatches \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header  'Accept: application/vnd.github.v3+json' \
+          --data '{
+            "event_type": "opened",
+            "client_payload": {"name":"Vivek"}
+            }' \
+          --fail
